@@ -13,4 +13,9 @@ class ProductsController extends Controller
         return view('home_page', ['Products' => $Products]);
 
     }
+    public function product_Alternatives(){
+        //$products = Product::all(); // Retrieve all products
+        $products = Product::with('products_alternative')->get();
+        return view('home_page', compact('products'));
+    }
 }

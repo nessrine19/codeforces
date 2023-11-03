@@ -8,9 +8,8 @@ use Illuminate\Http\Request;
 class CountriesController extends Controller
 {
     //all countries 
-    public function list_Countries(){
+    public function listCountries(){
         $countries = Country::all();
-        return view('countries', ['countries' => $countries]);
-
+        return view('add_doctor', compact('countries'));
     }
 }

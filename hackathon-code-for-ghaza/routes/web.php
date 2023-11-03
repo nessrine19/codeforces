@@ -22,24 +22,29 @@ use App\Http\Controllers\AlternativesController;
 Route::get('/', function () {
     return view('welcome');
 });
-//home page 
-Route::get('/home', function () {
-    return view('home_page');
-});
+
+Route::get('/',[ProductsController::class,'product_Alternatives'])->name('home');
+//display all doctors 
+Route::get('/doctors', [DoctorsController ::class,'list_Doctors'])->name('doctors');
+//display all donations
+Route::get('/donations', [DonationsController ::class,'list_Donations'])->name('donations');
+Route::get('/add_doctor', [CountriesController::class, 'listCountries'])->name('add_doctor');
+//add doctor 
+Route::post('/doctor_to_help', [DoctorsController ::class,'add_doctor_help'])->name('doctor_to_help');
+//display the product with his alternatives sorted by price 
+
+
 //display all products 
 Route::get('/products',[ProductsController::class,'list_products']);
 //search on the product 
 
 //display all alternatives for each product 
 Route::get('/alternatives',[AlternativesController::class,'list_Alternatives']);
-//display the product with his alternatives sorted by price 
-Route::get('/aproduct_alt',[AlternativesController::class,'product_Alternatives']);
-//display all donations
-Route::get('/donations', [DonationsController ::class,'list_Donations']);
 
-//display all doctors 
-Route::get('/doctors', [DoctorsController ::class,'list_Doctors']);
+
+
+
 //all countries 
-Route::get('/countries', [CountriesController ::class,'list_Countries']);
+//Route::get('/countries', [CountriesController ::class,'list_Countries']);
 //all categories 
 Route::get('/categories', [CategoriesController ::class,'list_Categories']);

@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Product_alternative;
+use App\Models\Product;
 use Illuminate\Http\Request;
+use App\Models\Product_alternative;
 
 class AlternativesController extends Controller
 {
@@ -13,4 +14,5 @@ class AlternativesController extends Controller
         return view('home_page', ['Product_alternatives' => $Product_alternatives]);
 
     }
+
 }
