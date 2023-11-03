@@ -43,5 +43,28 @@
             </tr>
         @endforeach
     </table>
+    <br><br><hr>
+    <form action="/products_add" method="POST">
+        @csrf
+        <label for="product_name">product_name</label><br>
+        <input type="text" name="product_name" placeholder="Product Name"><br>
+        <label for="desc">description</label><br>
+        <input type="text" name="desc" placeholder="desc "><br>
+        <label for="image">image</label><br>
+        <input type="file" name="image" placeholder="image "><br>
+        <label for="country">Country</label><br>
+        <select name="Country" id="Country">
+            @foreach ($countries as $country)
+                <option value="{{ $country->name }}">{{ $country->name }}</option>
+            @endforeach
+        </select><br>
+        <label for="category">category</label><br>
+        <select name="category" id="category">
+            @foreach ($categories as $category)
+                <option value="{{ $category->category_name }}">{{ $category->category_name }}</option>
+            @endforeach
+        </select><br>
+        <button type="submit">Add Product</button>
+    </form>
 </body>
 </html>

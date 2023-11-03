@@ -19,9 +19,7 @@ use App\Http\Controllers\AlternativesController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Route::get('/',[ProductsController::class,'product_Alternatives'])->name('home');
 //display all doctors 
@@ -37,7 +35,8 @@ Route::post('/doctor_to_help', [DoctorsController ::class,'add_doctor_help'])->n
 //display all products 
 Route::get('/products',[ProductsController::class,'list_products']);
 //search on the product 
-
+Route::get('/categories', [CategoriesController ::class,'list_Categories']);
+Route::post('/products_add',[ProductsController::class,'add_product'])->name('add_product');
 //display all alternatives for each product 
 Route::get('/alternatives',[AlternativesController::class,'list_Alternatives']);
 
@@ -47,4 +46,3 @@ Route::get('/alternatives',[AlternativesController::class,'list_Alternatives']);
 //all countries 
 //Route::get('/countries', [CountriesController ::class,'list_Countries']);
 //all categories 
-Route::get('/categories', [CategoriesController ::class,'list_Categories']);
