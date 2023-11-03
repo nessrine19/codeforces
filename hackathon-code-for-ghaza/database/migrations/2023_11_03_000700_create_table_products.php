@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('product_name'); 
             $table->string('desc');
+            $table->string('image');
             $table->unsignedBigInteger('id_country');
             $table->unsignedBigInteger('id_category');
             $table->foreign('id_country')->references('id')->on('countries')->onDelete('cascade');

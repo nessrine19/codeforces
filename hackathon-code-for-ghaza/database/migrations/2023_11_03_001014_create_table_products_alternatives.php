@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('product_alt_name'); 
             $table->string('desc');
             $table->decimal('price');
+            $table->string('image');
             $table->unsignedBigInteger('id_country');
             $table->unsignedBigInteger('id_category');
             $table->unsignedBigInteger('id_Product');
